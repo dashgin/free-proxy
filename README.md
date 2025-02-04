@@ -68,7 +68,7 @@ If you want to send your Python web requests through the proxy, you can do so wi
 
 ### Install the Required Package
 ```bash
-pip install requests[socks]
+pip install 'requests[socks]'
 ```
 
 ### Example Python Code
