@@ -23,7 +23,7 @@ start_tunnel() {
 
     echo "Starting SSH tunnel..."
     # Start the SSH tunnel in the background.
-    ssh -D $LOCAL_PORT -f -C -q -N $SSH_USER@$SSH_SERVER
+    ssh -D 0.0.0.0:$LOCAL_PORT -f -C -q -N $SSH_USER@$SSH_SERVER
 
     # Give SSH a moment to establish the connection.
     sleep 1
