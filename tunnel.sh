@@ -29,7 +29,7 @@ start_tunnel() {
     sleep 1
 
     # Find the PID of the SSH process. This uses pgrep with the full command string.
-    PID=$(pgrep -f "ssh -D $LOCAL_PORT -f -C -q -N $SSH_USER@$SSH_SERVER" | head -n 1)
+    PID=$(pgrep -f "ssh -D 0.0.0.0:$LOCAL_PORT -f -C -q -N $SSH_USER@$SSH_SERVER" | head -n 1)
     if [ -z "$PID" ]; then
         echo "Failed to start SSH tunnel."
         exit 1
